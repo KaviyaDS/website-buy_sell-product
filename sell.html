@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... -->
+</head>
+<body>
+    <!-- Seller details form -->
+    <form id="sellerForm">
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" required><br><br><br>
+
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required><br><br><br>
+
+        <label for="productRate">Product Rate:</label>
+        <input type="text" id="productRate" name="productRate" required><br><br><br>
+
+        <label for="address">Seller's Address:</label>
+        <input type="text" id="address" name="address" required><br><br><br>
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="car">Car</option>
+            <option value="tv">TV</option>
+            <option value="bike">Bike</option>
+            <option value="laptop">Laptop</option>
+            <option value="mobile">Mobile</option>
+        </select><br><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('sellerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            // Get seller details from the form
+            const image = document.getElementById('image').value;
+            const productName = document.getElementById('productName').value;
+            const productRate = document.getElementById('productRate').value;
+            const address = document.getElementById('address').value;
+            const category = document.getElementById('category').value; // Add category input in your form
+
+            // Create an object to store seller details
+            const sellerDetails = {
+                image,
+                productName,
+                productRate,
+                address,
+                category,
+            };
+
+            // Store seller details in local storage
+            localStorage.setItem('sellerDetails', JSON.stringify(sellerDetails));
+
+            // Redirect to car.html or any other page as needed
+            // window.location.href = 'car.html';
+        });
+    </script>
+</body>
+</html>

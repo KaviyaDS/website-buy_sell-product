@@ -1,0 +1,286 @@
+<head>
+    <title>car</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create responsive grid with minimum column width of 250px */
+        gap: 100px; /* Add a gap between grid items */
+        margin: 30px; /* Center-align the grid */
+    }
+
+    .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        padding: 20px; /* Add padding for spacing and shadow effect */
+        background-color: #fff; /* Set background color for the grid */
+        border-radius: 10px; /* Add border radius for rounded corners */
+        box-shadow: 0px 0px 10px rgba(0.2, 0.2, 0.2, 0.5); 
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-name {
+        font-weight: bold;   
+    }
+
+    .product-rate {
+        color: #007BFF;
+    }
+
+    .product-description {
+        margin-top: 10px;
+    }
+    .sell-button {
+            position: absolute; /* Set absolute positioning for the button */
+            top: 15px; /* Adjust the top position for the button */
+            right: 20px; /* Adjust the right position for the button */
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(0.2, 0.2, 0.2, 0.5); 
+        }
+    .sell-button:hover{
+        transform: scale(1.2);
+    }
+    .cart-button {
+            position: absolute; 
+            top: 15px; 
+            right: 130px; 
+            background-color:coral;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            transition: transform 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(0.2, 0.2, 0.2, 0.5); 
+        }
+    .cart-button:hover{
+        transform: scale(1.2);
+    }
+        .addcart-button{background-color:coral;transition: transform 0.3s ease;}
+        .addcart-button:hover{transform: scale(1.2);}
+        .buy{background-color:green;transition: transform 0.3s ease;margin-right: 15px;}
+        .buy:hover{transform: scale(1.2);}
+</style>
+</head>
+<body>
+<h1>Here!!! are the collections of car</h1>
+<button class="sell-button"><a href="sell.html">+ Sell</a></button>
+<button class="cart-button"><a href="cart.html">Cart</a></button>
+<div class="product-grid">
+    <div class="product">
+        <img src="https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/148477/thar-right-front-three-quarter-5.jpeg?isig=0&q=80" alt="car">
+        <div class="product-name">Mahindra Thar</div>
+        <div class="product-rate">₹16.94 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://stimg.cardekho.com/images/car-images/930x620/Maruti/Swift/10402/1688189645237/229_Metallic-Magma-Grey_797977.jpg?tr=w-898" alt="car">
+        <div class="product-name">Maruti Swift</div>
+        <div class="product-rate">₹9.03 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Tata-Nexon-220920231520.jpeg&w=350&h=251&q=90&c=1" alt="car">
+        <div class="product-name">Tata Nexon</div>
+        <div class="product-rate">₹ 9.18lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Citroen-C3-Aircross-260920231130.jpg&w=350&h=251&q=90&c=1" alt="car">
+        <div class="product-name">Citroen C3 Aircross</div>
+        <div class="product-rate">₹ 11.29 lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrkMVorrGKq-BWRj0vaoAKc8s9jsDwCY7SQ&usqp=CAU" alt="car">
+        <div class="product-name">Supra mk5</div>
+        <div class="product-rate">₹ 1 cr</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/128413/scorpio-exterior-right-front-three-quarter-46.jpeg?isig=0&q=80" alt="car">
+        <div class="product-name">Mahindra Scorpio</div>
+        <div class="product-rate">₹ 13.25 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/42355/xuv700-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="car">
+        <div class="product-name">Mahindra XUV700</div>
+        <div class="product-rate">₹ 14.03 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/130583/hector-facelift-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="car">
+        <div class="product-name">MG Hector</div>
+        <div class="product-rate">₹ 14.73 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/141119/triber-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="car">
+        <div class="product-name">Renault Triber</div>
+        <div class="product-rate">₹ 6.34 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/131181/bolero-neo-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="car">
+        <div class="product-name">Mahindra Bolero Neo</div>
+        <div class="product-rate">₹ 9.63 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="https://imgd.aeplcdn.com/227x128/n/cw/ec/34560/cooper-exterior-right-front-three-quarter-2.jpeg?q=80" alt="car">
+        <div class="product-name">MINI Cooper</div>
+        <div class="product-rate">₹ 41.20 Lakh</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>    
+    <div class="product">
+        <img src="data:image/jpeg;base64,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" alt="car">
+        <div class="product-name">Nissan GT-R</div>
+        <div class="product-rate">₹ 1 cr</div><br>
+        <button class="buy" id="buybutton" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    
+</div>
+
+<script>
+    function addToCart(button) {
+            // Find the product div that contains the clicked button
+            const productDiv = button.closest('.product');
+
+            if (productDiv) {
+                // Serialize the product div as HTML
+                const productHTML = productDiv.outerHTML;
+
+                // Get the existing cart items from local storage or initialize an empty array
+                const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // Check if the product is already in the cart
+                const existingProductIndex = cartItems.findIndex(item => item.html === productHTML);
+
+                if (existingProductIndex !== -1) {
+                    // Increment the quantity if the product is already in the cart
+                    cartItems[existingProductIndex].quantity += 1;
+                } else {
+                    // Add the selected product to the cart
+                    cartItems.push({ html: productHTML, quantity: 1 });
+                }
+
+                // Store the updated cart in local storage
+                localStorage.setItem('cart', JSON.stringify(cartItems));
+
+                // Show an alert with the product name
+                alert('Added ' + productDiv.querySelector('.product-name').textContent + ' to the cart!');
+            } else {
+                console.error('Product not found.');
+            }
+        }
+
+function showCheckoutForm(sourcePage) {
+    // Prompt the user for their details
+    const phoneNumber = prompt("Please enter your phone number:");
+    const address = prompt("Please enter your address:");
+    const email = prompt("Please enter your email address:");
+    const paymentMethod = prompt("Please enter your payment method:");
+
+    // Check if the user provided all required details
+    if (phoneNumber && address && email && paymentMethod) {
+        // Handle the checkout process here
+        // You can send this information to a server or perform any other actions you need.
+        
+        // For now, let's display the details in an alert
+        alert(`Thank you for your purchase from ${sourcePage}!\n\nPhone Number: ${phoneNumber}\nAddress: ${address}\nEmail: ${email}\nPayment Method: ${paymentMethod}`);
+    } else {
+        alert("Please provide all required details to complete your purchase.");
+    }
+}
+
+// Get the seller details from local storage
+const sellerDetails = JSON.parse(localStorage.getItem('sellerDetails')) || [];
+
+// Display the seller details in the car.html page
+if (sellerDetails && sellerDetails.category ==='car') {
+    const sellerDetailsContainer = document.querySelector('.product-grid');
+    const sellerElement = document.createElement('div');
+    sellerElement.classList.add('product');
+    // Create a grid format for the seller details
+    sellerElement.innerHTML = `
+        <img src="${sellerDetails.image}" alt="seller-product">
+        <div class="product-name">${sellerDetails.productName}</div>
+        <div class="product-rate">${sellerDetails.productRate}</div>
+        <div class="seller-address">${sellerDetails.address}</div>
+        <button class="buy" onclick="showCheckoutForm()">Buy Now</button>
+        <button class="addcart-button" onclick="addToCart(this)">Add to Cart</button>
+    `;
+
+    // Append the seller details to the cart items container
+    sellerDetailsContainer.appendChild(sellerElement);
+}
+// // Get seller details from local storage
+// const sellerDetails = JSON.parse(localStorage.getItem('sellerDetails'));
+
+// // Check if seller details exist in local storage
+// if (sellerDetails) {
+//     // Create a grid item for the seller details
+//     const gridItem = document.createElement('div');
+//     gridItem.classList.add('product'); // Style it like other products
+
+//     // Create elements for the seller details
+//     const img = document.createElement('img');
+//     img.src = sellerDetails.image;
+//     img.alt = 'Seller Product';
+
+//     const productName = document.createElement('div');
+//     productName.classList.add('product-name');
+//     productName.textContent = sellerDetails.productName;
+
+//     const productRate = document.createElement('div');
+//     productRate.classList.add('product-rate');
+//     productRate.textContent = sellerDetails.productRate;
+
+//     const address = document.createElement('div');
+//     address.classList.add('address');
+//     address.textContent = sellerDetails.address;
+
+//     // Append elements to the grid item
+//     gridItem.appendChild(img);
+//     gridItem.appendChild(productName);
+//     gridItem.appendChild(productRate);
+//     gridItem.appendChild(address);
+
+//     // Append the grid item to your product container
+//     const productContainer = document.querySelector('.product-grid'); // Adjust the selector to your actual product container
+//     productContainer.appendChild(gridItem);
+// }
+
+</script>
+</body>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   }
+   #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Place the video behind all other content */
+        }
+
+h1 {
+  color: #333;
+}
+
+form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 40px 55px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #220b0b;
+  border-radius: 3px;
+}
+
+input[type="button"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+    </style>
+    <script>
+        function validate() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the username and password are valid
+            if(password ==="123") {
+                // If valid, redirect to the second page
+                window.location = "category.html";
+            } else {
+                // If invalid, show an error message
+                alert("Invalid username or password!");
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <!-- Replace 'your-video.mp4' with the path to your video -->
+        <source src="https://cdn.pixabay.com/vimeo/602894376/shop-87752.mp4?width=640&hash=217f441e09feb6e1d882301ee32be9831e90905b" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br><br><br><br><br><br><br><br>
+    <center>
+    <h1> Login Here !</h1>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <input type="button" value="Login" onclick="validate()"><br><br><br>
+        
+    </form>
+    <center>
+       
+
+</body>
+</html>

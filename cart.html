@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        .cart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+            gap: 20px;
+            margin: 30px;
+        }
+
+        .cart-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0.2, 0.2, 0.2, 0.5);
+            position: relative;
+        }
+
+        .cart-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .remove-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .addcart-button{background-color:coral;}
+        .buy{background-color:green;}
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div class="cart-items">
+        <!-- Display cart items and details here using JavaScript -->
+    </div>
+
+    <script>
+        // Get the cart items from local storage
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Display the cart items in the cart.html page
+        const cartItemsContainer = document.querySelector('.cart-items');
+
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            // Create a grid container for cart items
+            const gridContainer = document.createElement('div');
+            gridContainer.classList.add('cart-grid');
+
+            cartItems.forEach((item, index) => {
+                // Create a grid item for each cart item
+                const gridItem = document.createElement('div');
+                gridItem.classList.add('cart-item');
+
+                // Set the innerHTML of the grid item to the stored product HTML
+                gridItem.innerHTML = item.html;
+
+                // Create a "Remove" button for each item
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.classList.add('remove-button');
+
+                // Add an event listener to the "Remove" button to remove the item from the cart
+                removeButton.addEventListener('click', () => {
+                    // Remove the item from the cartItems array
+                    cartItems.splice(index, 1);
+
+                    // Update the local storage with the updated cartItems array
+                    localStorage.setItem('cart', JSON.stringify(cartItems));
+
+                    // Remove the grid item from the DOM
+                    gridContainer.removeChild(gridItem);
+
+                    // Check if the cart is empty and update the message
+                    if (cartItems.length === 0) {
+                        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+                    }
+                });
+
+                // Append the "Remove" button to the grid item
+                gridItem.appendChild(removeButton);
+
+                // Append the grid item to the grid container
+                gridContainer.appendChild(gridItem);
+                
+            });
+
+            // Append the grid container to the cart items container
+            cartItemsContainer.appendChild(gridContainer);
+        }
+        // Get the "Buy" button in both car.html and cart.html
+        const buyButton = document.getElementById('buybutton');
+
+function showCheckoutForm(sourcePage) {
+    // Prompt the user for their details
+    const phoneNumber = prompt("Please enter your phone number:");
+    const address = prompt("Please enter your address:");
+    const email = prompt("Please enter your email address:");
+    const paymentMethod = prompt("Please enter your payment method:");
+
+    // Check if the user provided all required details
+    if (phoneNumber && address && email && paymentMethod) {
+        // Handle the checkout process here
+        // You can send this information to a server or perform any other actions you need.
+        
+        // For now, let's display the details in an alert
+        alert(`Thank you for your purchase from ${sourcePage}!\n\nPhone Number: ${phoneNumber}\nAddress: ${address}\nEmail: ${email}\nPayment Method: ${paymentMethod}`);
+    } else {
+        alert("Please provide all required details to complete your purchase.");
+    }
+}
+buyButton.addEventListener('click', showCheckoutForm);
+    </script>
+</body>
+</html>
